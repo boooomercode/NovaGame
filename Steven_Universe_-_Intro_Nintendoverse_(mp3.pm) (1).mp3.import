@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byjjx15gtbhcr"
+path="res://.godot/imported/Steven_Universe_-_Intro_Nintendoverse_(mp3.pm) (1).mp3-81101022c813db83e8c7d61fd22557db.mp3str"
+
+[deps]
+
+source_file="res://Steven_Universe_-_Intro_Nintendoverse_(mp3.pm) (1).mp3"
+dest_files=["res://.godot/imported/Steven_Universe_-_Intro_Nintendoverse_(mp3.pm) (1).mp3-81101022c813db83e8c7d61fd22557db.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
