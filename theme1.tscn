@@ -1,0 +1,149 @@
+[gd_scene load_steps=16 format=3 uid="uid://bxewup2pvr0gv"]
+
+[ext_resource type="Texture2D" uid="uid://besdav33vt6v" path="res://Gemini_Generated_Image_a2vqz5a2vqz5a2vq.png" id="1_6p67i"]
+[ext_resource type="Texture2D" uid="uid://dhvbek1eybyd1" path="res://diamonds-removebg-preview.png" id="2_c87hd"]
+[ext_resource type="Script" uid="uid://ds8c4yo4tkypp" path="res://button.gd" id="3_b4fyd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4fyd"]
+atlas = ExtResource("2_c87hd")
+region = Rect2(168, 0, 148, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtlm4"]
+atlas = ExtResource("2_c87hd")
+region = Rect2(168, 0, 148, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oswg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4fyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtlm4")
+}],
+"loop": true,
+"name": &"D1",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c87hd"]
+atlas = ExtResource("2_c87hd")
+region = Rect2(18, 0, 148, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oswg8"]
+atlas = ExtResource("2_c87hd")
+region = Rect2(18, 0, 149, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_848ud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c87hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oswg8")
+}],
+"loop": true,
+"name": &"D2",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc7l3"]
+atlas = ExtResource("2_c87hd")
+region = Rect2(312, 0, 145, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua7e7"]
+atlas = ExtResource("2_c87hd")
+region = Rect2(312, 0, 145, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w26m6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc7l3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua7e7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3na7"]
+atlas = ExtResource("2_c87hd")
+region = Rect2(586, 0, 140, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l7rp"]
+atlas = ExtResource("2_c87hd")
+region = Rect2(586, 0, 140, 125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwgxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3na7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l7rp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Theme1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -12.0
+offset_right = 629.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6p67i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(595.00006, 359)
+scale = Vector2(1.006756, 1.0336668)
+sprite_frames = SubResource("SpriteFrames_oswg8")
+animation = &"D1"
+autoplay = "D1"
+frame_progress = 0.75873387
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(885, 251)
+sprite_frames = SubResource("SpriteFrames_848ud")
+animation = &"D2"
+frame_progress = 0.7582182
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(277, 178)
+sprite_frames = SubResource("SpriteFrames_w26m6")
+frame_progress = 0.87131673
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(140, 460)
+sprite_frames = SubResource("SpriteFrames_cwgxa")
+frame_progress = 0.98786056
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 306.0
+offset_right = 651.0
+offset_bottom = 402.0
+flat = true
+script = ExtResource("3_b4fyd")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

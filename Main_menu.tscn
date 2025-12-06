@@ -1,4 +1,43 @@
-[gd_scene format=3 uid="uid://bs88ai0vtansl"]
+[gd_scene load_steps=11 format=3 uid="uid://bs88ai0vtansl"]
+
+[ext_resource type="Texture2D" uid="uid://dxn3wij2rca3j" path="res://bg1.png" id="1_x6lt7"]
+[ext_resource type="Texture2D" uid="uid://dfvicwhovdn6a" path="res://Screenshot_2025-12-06_121527-removebg-preview.png" id="2_x2ps0"]
+[ext_resource type="Script" uid="uid://ds8c4yo4tkypp" path="res://button.gd" id="3_x2ps0"]
+[ext_resource type="FontFile" uid="uid://bjs0gj0nwr37t" path="res://Jersey_10/Jersey10-Regular.ttf" id="4_rlxw3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlxw3"]
+atlas = ExtResource("2_x2ps0")
+region = Rect2(0, 0, 496, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kukc"]
+atlas = ExtResource("2_x2ps0")
+region = Rect2(0, 168, 496, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ovav"]
+atlas = ExtResource("2_x2ps0")
+region = Rect2(0, 336, 496, 168)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qx8t1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlxw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kukc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ovav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_5kukc"]
+base_font = ExtResource("4_rlxw3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ovav"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +46,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x6lt7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(561, 495.99997)
+scale = Vector2(0.9395161, 0.955357)
+sprite_frames = SubResource("SpriteFrames_qx8t1")
+autoplay = "default"
+frame_progress = 0.11920727
+
+[node name="Button" type="Button" parent="AnimatedSprite2D"]
+offset_left = -160.72104
+offset_top = -49.196236
+offset_right = 161.78537
+offset_bottom = 56.52343
+flat = true
+script = ExtResource("3_x2ps0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -232.0
+offset_right = 245.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_5kukc")
+theme_override_font_sizes/font_size = 300
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8ovav")
+text = "NOVA"
+
+[connection signal="pressed" from="AnimatedSprite2D/Button" to="AnimatedSprite2D/Button" method="_on_play_pressed"]
